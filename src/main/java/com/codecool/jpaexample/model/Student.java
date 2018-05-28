@@ -21,6 +21,7 @@ public class Student {
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
+    @Transient
     private long age;
 
     @OneToOne
@@ -74,6 +75,7 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
+    @Transient
     public long getAge() {
         return age;
     }
