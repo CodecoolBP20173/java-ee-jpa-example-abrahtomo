@@ -15,6 +15,7 @@ public class Student {
 
     private String name;
 
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
     @Temporal(TemporalType.DATE)

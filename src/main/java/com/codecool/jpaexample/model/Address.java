@@ -9,16 +9,17 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String country;
-    private String zipcode;
+    @Column(name = "Zip", length = 4)
+    private String Zip;
     private String city;
     private String addr;
 
     public Address() {
     }
 
-    public Address(String country, String zipcode, String city, String addr) {
+    public Address(String country, String Zip, String city, String addr) {
         this.country = country;
-        this.zipcode = zipcode;
+        this.Zip = Zip;
         this.city = city;
         this.addr = addr;
     }
@@ -40,11 +41,11 @@ public class Address {
     }
 
     public String getZipcode() {
-        return zipcode;
+        return Zip;
     }
 
     public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+        this.Zip = zipcode;
     }
 
     public String getCity() {
@@ -68,7 +69,7 @@ public class Address {
         return "Address{" +
                 "id=" + id +
                 ", country='" + country + '\'' +
-                ", zipcode='" + zipcode + '\'' +
+                ", zipcode='" + Zip + '\'' +
                 ", city='" + city + '\'' +
                 ", addr='" + addr + '\'' +
                 '}';
