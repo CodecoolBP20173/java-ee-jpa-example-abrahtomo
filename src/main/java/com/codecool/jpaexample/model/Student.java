@@ -34,6 +34,19 @@ public class Student {
     @ElementCollection
     private List<String> phoneNumbers = new ArrayList<>();
 
+    @ManyToOne
+    @JoinColumn(name = "klass_id")
+    private Klass klass;
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
+    }
+
+    public Klass getKlass() {
+
+        return klass;
+    }
+
     public Student() {
     }
 
