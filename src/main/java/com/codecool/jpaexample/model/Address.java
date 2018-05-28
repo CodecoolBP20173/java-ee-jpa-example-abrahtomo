@@ -13,6 +13,8 @@ public class Address {
     private String Zip;
     private String city;
     private String addr;
+    @OneToOne
+    private Student student;
 
     public Address() {
     }
@@ -22,6 +24,14 @@ public class Address {
         this.Zip = Zip;
         this.city = city;
         this.addr = addr;
+    }
+
+    public Address(String country, String zip, String city, String addr, Student student) {
+        this.country = country;
+        Zip = zip;
+        this.city = city;
+        this.addr = addr;
+        this.student = student;
     }
 
     public long getId() {
@@ -60,8 +70,18 @@ public class Address {
         return addr;
     }
 
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Student getStudent() {
+
+        return student;
+    }
+
     public void setAddr(String addr) {
         this.addr = addr;
+
     }
 
     @Override
