@@ -11,13 +11,16 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
+    @Column(name = "name")
     private String name;
 
     @Column(name = "email", unique = true, nullable = false)
     private String email;
 
+    @Column(name = "dateofbirth")
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
@@ -27,6 +30,7 @@ public class Student {
     @OneToOne
     private Address address;
 
+    @Column(name = "phonenumbers")
     @ElementCollection
     private List<String> phoneNumbers = new ArrayList<>();
 
